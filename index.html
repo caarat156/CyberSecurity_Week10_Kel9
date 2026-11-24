@@ -175,3 +175,216 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
     }
+
+       /* Mobile-first layout: single-column reading flow, enhanced at wider widths. */
+    .wrap { width: min(1120px, calc(100% - 24px)); }
+    .topbar-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+    .nav { gap: 8px 14px; }
+    .nav-note { text-align: left; }
+    .hero { padding: 46px 0 30px; }
+    section { padding: 30px 0; }
+    .grid-2, .grid-3, .steps { grid-template-columns: 1fr; }
+    .grid-2 > *, .grid-3 > *, .steps > *, .card, .panel { min-width: 0; }
+    .refs li { grid-template-columns: 1fr; gap: 3px; }
+    .map-svg { min-height: 0; }
+    .map-info a { white-space: normal; }
+    @media (min-width: 640px) {
+      .wrap { width: min(1120px, calc(100% - 36px)); }
+      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .refs li { grid-template-columns: 90px minmax(0, 1fr); gap: 12px; }
+    }
+    @media (min-width: 900px) {
+      .topbar-inner { align-items: center; flex-direction: row; }
+      .nav-note { text-align: right; }
+      .hero { padding: 70px 0 40px; }
+      section { padding: 38px 0; }
+      .grid-3, .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#atas" aria-label="Kembali ke bagian atas">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span>ETHICAL HACKING ESSENTIALS · MATERI</span>
+      </a>
+      <div>
+        <nav class="nav" aria-label="Navigasi seri materi">
+          <a href="index.html" aria-current="page">Beranda</a>
+          <a href="icmp-redirect.html">ICMP Redirect</a>
+          <a href="ntp-memcached-amplification.html">Amplification</a>
+          <a href="firewall-generations.html">Firewall</a>
+        </nav>
+        <p class="nav-note">Link ini hanya berfungsi jika semua file ada dalam satu folder.</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="atas" class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <span class="eyebrow">Keamanan jaringan · belajar interaktif</span>
+      <h1 id="page-title">Keamanan Jaringan <span>Interaktif</span></h1>
+      <p class="hero-copy">Seri ringkas untuk mahasiswa pemula hingga menengah di mata kuliah Ethical Hacking Essentials. Kenali pengalihan rute ICMP, DDoS melalui UDP reflection/amplification, dan perkembangan firewall—dengan fokus memahami risiko, deteksi, serta mitigasi yang bertanggung jawab.</p>
+      <div class="hero-note">
+        <span aria-hidden="true">ⓘ</span>
+        <span><strong>Tujuan edukasi dan defensif.</strong> Materi menjelaskan prinsip keamanan jaringan dan kontrol pertahanan; bukan panduan untuk menyerang sistem.</span>
+      </div>
+    </section>
+
+    <section id="cara-menggunakan" aria-labelledby="use-title">
+      <div class="section-heading">
+        <p class="section-tag">Mulai di sini</p>
+        <h2 id="use-title">Cara menggunakan</h2>
+        <p class="lead">Semua materi dirancang agar dapat dibuka lokal dan dibaca secara mandiri.</p>
+      </div>
+      <div class="steps">
+        <article class="card step-card"><h3>Simpan bersama</h3><p>Letakkan berkas beranda dan semua halaman topik dalam satu folder agar navigasi relatifnya saling terhubung.</p></article>
+        <article class="card step-card"><h3>Buka langsung</h3><p>Double-click file HTML mana pun untuk membukanya di browser. Tidak perlu koneksi internet untuk membaca atau memakai fitur interaktif.</p></article>
+        <article class="card step-card"><h3>Pilih topik</h3><p>Setiap halaman bisa dibaca sendiri tanpa urutan tertentu; mulai dari topik yang paling relevan untuk kebutuhan belajarmu.</p></article>
+      </div>
+      <p class="warning-note">Jika file dikirim satu per satu, link antarhalaman tidak akan berfungsi. Isi setiap halaman topik tetap lengkap dan dapat dibaca secara mandiri.</p>
+    </section>
+
+    <section id="topik" aria-labelledby="topics-title">
+      <div class="section-heading">
+        <p class="section-tag">Pilih materi</p>
+        <h2 id="topics-title">Tiga topik keamanan jaringan</h2>
+        <p class="lead">Tiap halaman memuat penjelasan, visualisasi, pertimbangan defensif, kuis, dan referensi topiknya sendiri.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card topic-card">
+          <span class="topic-index">TOPIK 01</span>
+          <div class="topic-body">
+            <h3>ICMP Redirect</h3>
+            <p>Pelajari serangan pengalihan rute pada level jaringan lokal. Materi membedakan fungsi sah ICMP Redirect dari penyalahgunaannya dan menjelaskan pertahanan host/jaringan <a href="#ref-icmp-1">[1]</a><a href="#ref-icmp-3">[3]</a>.</p>
+          </div>
+          <div class="topic-meta">
+            <span><strong>Di dalam:</strong> animasi rute, struktur paket, kartu mitigasi, dan kuis.</span>
+            <span><strong>Estimasi baca:</strong> sekitar 8 menit.</span>
+          </div>
+          <a class="control primary" href="icmp-redirect.html">Buka materi</a>
+          <p class="link-note">Link ini hanya berfungsi jika semua file ada dalam satu folder.</p>
+        </article>
+        <article class="card topic-card">
+          <span class="topic-index">TOPIK 02</span>
+          <div class="topic-body">
+            <h3>NTP Monlist &amp; Memcached Amplification</h3>
+            <p>Pahami DDoS berbasis UDP reflection dan amplification: request kecil dapat memicu respons lebih besar ke korban. Fokusnya pada akar kelemahan layanan terbuka, deteksi, serta mitigasi <a href="#ref-amp-2">[8]</a><a href="#ref-amp-3">[9]</a><a href="#ref-amp-4">[10]</a>.</p>
+          </div>
+          <div class="topic-meta">
+            <span><strong>Di dalam:</strong> animasi reflector, perbandingan NTP/Memcached, simulator edukatif, dan kuis.</span>
+            <span><strong>Estimasi baca:</strong> sekitar 10 menit.</span>
+          </div>
+          <a class="control primary" href="ntp-memcached-amplification.html">Buka materi</a>
+          <p class="link-note">Link ini hanya berfungsi jika semua file ada dalam satu folder.</p>
+        </article>
+        <article class="card topic-card">
+          <span class="topic-index">TOPIK 03</span>
+          <div class="topic-body">
+            <h3>Generasi Teknologi Firewall</h3>
+            <p>Ikuti evolusi packet filtering, stateful inspection, proxy/application firewall, hingga Next-Generation Firewall (NGFW). Bandingkan konteks inspeksi sekaligus keterbatasannya <a href="#ref-fw-1">[13]</a><a href="#ref-fw-2">[14]</a>.</p>
+          </div>
+          <div class="topic-meta">
+            <span><strong>Di dalam:</strong> timeline, animasi skenario, diagram OSI interaktif, tabel perbandingan, dan kuis.</span>
+            <span><strong>Estimasi baca:</strong> sekitar 12 menit.</span>
+          </div>
+          <a class="control primary" href="firewall-generations.html">Buka materi</a>
+          <p class="link-note">Link ini hanya berfungsi jika semua file ada dalam satu folder.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="peta" aria-labelledby="map-title">
+      <div class="section-heading">
+        <p class="section-tag">Peta konsep</p>
+        <h2 id="map-title">Bagaimana topik-topik saling terhubung?</h2>
+        <p class="lead">Pilih atau arahkan pointer ke node untuk membaca ringkasan. Node dapat diakses dengan keyboard; alternatif daftar teks tersedia di bawah diagram.</p>
+      </div>
+      <article class="panel map-shell">
+        <div class="map-top"><h3>Serangan jaringan ↔ kontrol pertahanan</h3><p>Merah menandai skenario ancaman, hijau menandai kontrol pertahanan; garis abu-abu menggambarkan hubungan konsep.</p></div>
+        <svg class="map-svg" viewBox="0 0 850 390" role="img" aria-label="Peta interaktif: ICMP Redirect dan UDP amplification sebagai topik ancaman di sisi kiri; firewall di sisi kanan sebagai pertahanan yang dapat memfilter ICMP type 5 dan membatasi UDP reflection dengan keterbatasan.">
+          <defs>
+            <marker id="arrow-neutral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8997a8"></path></marker>
+          </defs>
+          <path class="edge" marker-end="url(#arrow-neutral)" d="M 280 115 C 410 115, 440 150, 560 167"></path>
+          <path class="edge" marker-end="url(#arrow-neutral)" d="M 280 290 C 410 290, 440 240, 560 220"></path>
+          <text class="edge-label edge-green" x="355" y="95">memfilter ICMP type 5</text>
+          <text class="edge-label edge-green" x="329" y="318">membatasi reflection UDP, dengan keterbatasan</text>
+          <g class="node attack" data-node="icmp" tabindex="0" role="button" aria-label="ICMP Redirect: topik serangan pengalihan rute lokal. Pilih untuk membaca ringkasan dan link materi.">
+            <rect x="35" y="72" width="245" height="90" rx="17"></rect>
+            <text class="title" x="157" y="108" text-anchor="middle">ICMP Redirect</text>
+            <text class="sub" x="157" y="133" text-anchor="middle">pengalihan rute · ICMP Type 5</text>
+          </g>
+          <g class="node attack" data-node="udp" tabindex="0" role="button" aria-label="NTP Monlist dan Memcached: topik UDP reflection dan amplification. Pilih untuk membaca ringkasan dan link materi.">
+            <rect x="35" y="245" width="245" height="90" rx="17"></rect>
+            <text class="title" x="157" y="281" text-anchor="middle">UDP Amplification</text>
+            <text class="sub" x="157" y="306" text-anchor="middle">NTP monlist · Memcached</text>
+          </g>
+          <g class="node neutral" data-node="network" tabindex="0" role="button" aria-label="Jaringan dan kebijakan: kontrol harus ditempatkan pada titik yang melihat trafik. Pilih untuk membaca ringkasan.">
+            <rect x="365" y="160" width="145" height="76" rx="16"></rect>
+            <text class="title" x="437" y="192" text-anchor="middle">Jaringan</text>
+            <text class="sub" x="437" y="216" text-anchor="middle">titik kontrol &amp; alur</text>
+          </g>
+          <path class="edge" marker-end="url(#arrow-neutral)" d="M 510 198 L 565 198"></path>
+          <g class="node defense selected" data-node="firewall" tabindex="0" role="button" aria-label="Generasi Teknologi Firewall: kontrol pertahanan untuk mengatur trafik dengan keterbatasan. Pilih untuk membaca ringkasan dan link materi.">
+            <rect x="565" y="139" width="245" height="118" rx="18"></rect>
+            <text class="title" x="687" y="183" text-anchor="middle">Firewall</text>
+            <text class="sub" x="687" y="209" text-anchor="middle">filtering · state · aplikasi</text>
+            <text class="sub" x="687" y="231" text-anchor="middle">kontrol defensif</text>
+          </g>
+        </svg>
+        <div id="map-info" class="map-info" aria-live="polite">
+          <strong id="map-info-title">Generasi Teknologi Firewall</strong>
+          <p id="map-info-copy">Firewall dapat memfilter ICMP Type 5 dan membatasi akses UDP pada layanan yang dilindungi, tetapi hanya mengendalikan trafik yang melewati titik inspeksinya. Firewall di sisi korban tidak dapat mengatasi saturasi link sebelum trafik tiba. <a id="map-info-link" href="firewall-generations.html">Buka materi terkait</a></p>
+        </div>
+        <div class="text-alternative">
+          <h3>Alternatif diagram: hubungan dalam teks</h3>
+          <ul>
+            <li><strong>ICMP Redirect → Firewall:</strong> aturan firewall dapat memfilter ICMP Type 5 sesuai desain jaringan <a href="#ref-icmp-1">[1]</a><a href="#ref-fw-5">[17]</a>; baca <a href="icmp-redirect.html">materi ICMP Redirect</a>.</li>
+            <li><strong>NTP/Memcached UDP amplification → Firewall:</strong> firewall sisi layanan dapat membatasi eksposur reflector; firewall korban tidak menyelesaikan saturasi upstream <a href="#ref-amp-2">[8]</a><a href="#ref-amp-3">[9]</a>; baca <a href="ntp-memcached-amplification.html">materi Amplification</a>.</li>
+            <li><strong>Firewall:</strong> packet filtering hingga NGFW menawarkan jenis konteks inspeksi yang berbeda <a href="#ref-fw-1">[13]</a><a href="#ref-fw-2">[14]</a>; baca <a href="firewall-generations.html">materi Generasi Teknologi Firewall</a>.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="urutan" aria-labelledby="order-title">
+      <div class="section-heading">
+        <p class="section-tag">Panduan belajar</p>
+        <h2 id="order-title">Saran urutan belajar</h2>
+        <p class="lead">Urutan ini membantu menghubungkan ancaman jaringan ke cara bertahan, tetapi bukan prasyarat atau susunan wajib.</p>
+      </div>
+      <ol class="order-list">
+        <li><div><strong>ICMP Redirect</strong><p class="muted">Mulai dari contoh pengaruh pesan jaringan lokal terhadap rute dan kepercayaan host.</p></div></li>
+        <li><div><strong>NTP Monlist &amp; Memcached Amplification</strong><p class="muted">Lanjutkan ke penyalahgunaan layanan UDP sebagai reflector dan dampaknya terhadap ketersediaan jaringan.</p></div></li>
+        <li><div><strong>Generasi Teknologi Firewall</strong><p class="muted">Tutup dengan membandingkan kontrol inspeksi yang dapat membatasi trafik tersebut beserta keterbatasannya.</p></div></li>
+      </ol>
+      <p class="warning-note">Urutan ini hanya saran. Kamu dapat membuka topik mana pun secara mandiri.</p>
+    </section>
+
+    <section id="glosarium" aria-labelledby="glossary-title">
+      <div class="section-heading">
+        <p class="section-tag">Istilah kunci</p>
+        <h2 id="glossary-title">Glosarium singkat</h2>
+        <p class="lead">Buka istilah untuk definisi ringkas dan halaman tempat pembahasannya.</p>
+      </div>
+      <div class="glossary">
+        <details><summary>Reflection</summary><p>Reflection adalah pola ketika request diarahkan ke server perantara dengan alamat sumber yang dipalsukan sehingga respons server dikirim ke pihak lain; dibahas di <a href="ntp-memcached-amplification.html">Amplification</a>.</p></details>
+        <details><summary>Amplification</summary><p>Amplification terjadi ketika ukuran respons yang dipantulkan lebih besar daripada request, sehingga trafik ke tujuan dapat meningkat; dibahas di <a href="ntp-memcached-amplification.html">Amplification</a>.</p></details>
+        <details><summary>BAF · Bandwidth Amplification Factor</summary><p>BAF adalah rasio ukuran byte respons terhadap ukuran byte request dalam konteks amplifikasi; dibahas di <a href="ntp-memcached-amplification.html">Amplification</a>.</p></details>
+        <details><summary>IP spoofing</summary><p>IP spoofing adalah pemalsuan alamat IP sumber yang tampak pada paket; relevan untuk reflection dan dijelaskan di <a href="ntp-memcached-amplification.html">Amplification</a>.</p></details>
+        <details><summary>MITM · Man-in-the-Middle</summary><p>Man-in-the-Middle adalah kondisi ketika pihak tak tepercaya berada di jalur komunikasi dan berpotensi mengamati atau mengubah trafik; peluang dan batasnya dibahas di <a href="icmp-redirect.html">ICMP Redirect</a>.</p></details>
+        <details><summary>ICMP Redirect</summary><p>ICMP Redirect adalah pesan kontrol IPv4 yang memberi tahu host tentang gateway alternatif; pemalsuan atau penerimaan tanpa kehati-hatian dapat memengaruhi rute lokal, sebagaimana dibahas di <a href="icmp-redirect.html">materi ICMP Redirect</a>.</p></details>
+        <details><summary>Stateful inspection</summary><p>Stateful inspection menilai paket dengan mempertimbangkan state koneksi/flow yang dicatat firewall; dibahas di <a href="firewall-generations.html">Generasi Teknologi Firewall</a>.</p></details>
+        <details><summary>DPI · Deep Packet Inspection</summary><p>DPI berarti pemeriksaan isi atau struktur paket lebih dalam daripada metadata header, sesuai kemampuan dan konfigurasi; dibahas di <a href="firewall-generations.html">Generasi Teknologi Firewall</a>.</p></details>
+        <details><summary>NGFW · Next-Generation Firewall</summary><p>NGFW adalah firewall yang menambahkan kemampuan di atas stateful firewall, seperti pengenalan aplikasi atau IPS, sesuai fitur dan implementasi; dibahas di <a href="firewall-generations.html">Generasi Teknologi Firewall</a>.</p></details>
+      </div>
+    </section>
+
+    <section id="referensi" aria-labelledby="refs-title">
+      <div class="section-heading">
+        <p class="section-tag">Sumber pelengkap</p>
+        <h2 id="refs-title">Referensi gabungan per topik</h2>
+        <p class="lead">Beranda ini merangkum sumber yang tercantum pada halaman topik. Setiap topik tetap menyediakan daftar referensinya sendiri.</p>
+      </div>
