@@ -388,3 +388,119 @@
         <h2 id="refs-title">Referensi gabungan per topik</h2>
         <p class="lead">Beranda ini merangkum sumber yang tercantum pada halaman topik. Setiap topik tetap menyediakan daftar referensinya sendiri.</p>
       </div>
+
+      <div class="refs-group">
+        <h3>ICMP Redirect</h3>
+        <p class="group-note">Daftar lengkap ada di halaman topik masing-masing.</p>
+        <p class="group-note">Daftar sumber pada halaman ICMP Redirect mencantumkan judul dan URL; penulis/tahun tidak ditampilkan di entri tersebut.</p>
+        <ol class="refs">
+          <li id="ref-icmp-1"><strong>[1] RFC 792</strong><div><a href="https://www.rfc-editor.org/rfc/rfc792">Internet Control Message Protocol</a><p>Format ICMP Redirect, Type 5, kode 0–3, Gateway Internet Address, header IP asli + 64 bit data, dan penjelasan fungsi sah Redirect.</p></div></li>
+          <li id="ref-icmp-2"><strong>[2] RFC 1122</strong><div><a href="https://www.rfc-editor.org/rfc/rfc1122">Requirements for Internet Hosts — Communication Layers</a><p>Persyaratan host untuk ICMP Redirect, termasuk pemeriksaan konteks dan perilaku host. Lihat bagian 3.2.2.2.</p></div></li>
+          <li id="ref-icmp-3"><strong>[3] RFC 1812</strong><div><a href="https://www.rfc-editor.org/rfc/rfc1812">Requirements for IP Version 4 Routers</a><p>Persyaratan router IPv4 terkait pembuatan dan pengiriman ICMP Redirect; berguna untuk konteks peran gateway.</p></div></li>
+          <li id="ref-icmp-4"><strong>[4] Linux</strong><div><a href="https://docs.kernel.org/networking/ip-sysctl.html">Dokumentasi kernel Linux: IP Sysctl</a><p>Definisi accept_redirects, hubungan nilai global/interface dengan forwarding, serta default fungsional host/router.</p></div></li>
+          <li id="ref-icmp-5"><strong>[5] Microsoft</strong><div><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-interface">Microsoft Learn: netsh interface</a><p>Referensi sintaks untuk netsh interface ipv4 set global, opsi icmpredirects, dan show global. Nilai default tidak ditetapkan di referensi tersebut, jadi periksa konfigurasi aktual.</p></div></li>
+          <li id="ref-icmp-6"><strong>[6] Alamat demo</strong><div><a href="https://www.rfc-editor.org/rfc/rfc5737">RFC 5737: IPv4 Address Blocks Reserved for Documentation</a><p>Alamat 192.0.2.0/24 dan 198.51.100.0/24 pada diagram adalah alamat dokumentasi.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="refs-group">
+        <h3>NTP Monlist &amp; Memcached Amplification</h3>
+        <p class="group-note">Daftar lengkap ada di halaman topik masing-masing.</p>
+        <ol class="refs">
+          <li id="ref-amp-1"><strong>[7] NVD</strong><div><a href="https://nvd.nist.gov/vuln/detail/CVE-2013-5211">National Institute of Standards and Technology, “CVE-2013-5211 Detail”</a><p>National Vulnerability Database, 2014. Rujukan CVE untuk kelemahan NTP mode-7 yang terkait dengan MON_GETLIST/monlist.</p><p class="verify-note">Catatan verifikasi: halaman NVD memakai konten dinamis dan perlu diperiksa manual untuk detail deskripsi/versi terdampak.</p></div></li>
+          <li id="ref-amp-2"><strong>[8] Cloudflare</strong><div><a href="https://blog.cloudflare.com/memcrashed-major-amplification-attacks-from-port-11211/">Cloudflare, “Memcrashed - Major amplification attacks from UDP port 11211”</a><p>2018. Menjelaskan reflection Memcached/UDP, contoh ukuran request/respons, dan rasio amplification yang diamati.</p></div></li>
+          <li id="ref-amp-3"><strong>[9] GitHub</strong><div><a href="https://github.blog/news-insights/company-news/ddos-incident-report/">GitHub Engineering, “DDoS incident report”</a><p>2018. Post-mortem insiden DDoS GitHub pada 28 Februari 2018, termasuk vektor Memcached dan respons mitigasi.</p></div></li>
+          <li id="ref-amp-4"><strong>[10] IETF</strong><div><a href="https://www.rfc-editor.org/rfc/rfc2827">Paul Ferguson &amp; David Senie, “Network Ingress Filtering: Defeating Denial of Service Attacks which employ IP Source Address Spoofing”</a><p>2000. RFC 2827 / Best Current Practice 38 (BCP 38), rekomendasi ingress filtering untuk membatasi pemalsuan alamat sumber.</p></div></li>
+          <li id="ref-amp-5"><strong>[11] NTP Project</strong><div><a href="https://www.ntp.org/documentation/4.2.8-series/ntpdc/">NTP Project, “ntpdc - special NTP query program”</a><p>Dokumentasi seri NTP 4.2.8, diperbarui 2023. Menjelaskan ntpdc, mode-7, fungsi query, dan status antarmuka yang deprecated; sumber konteks untuk istilah monlist.</p></div></li>
+          <li id="ref-amp-6"><strong>[12] IETF</strong><div><a href="https://www.rfc-editor.org/rfc/rfc5905">David L. Mills et al., “Network Time Protocol Version 4: Protocol and Algorithms Specification”</a><p>2010. RFC 5905, spesifikasi NTPv4; rujukan protokol untuk konteks port dan transport NTP.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="refs-group">
+        <h3>Generasi Teknologi Firewall</h3>
+        <p class="group-note">Daftar lengkap ada di halaman topik masing-masing.</p>
+        <ol class="refs">
+          <li id="ref-fw-1"><strong>[13] NIST</strong><div><a href="https://csrc.nist.gov/pubs/sp/800/41/r1/final">Karen Scarfone &amp; Paul Hoffman, “Guidelines on Firewalls and Firewall Policy”</a><p>NIST Special Publication 800-41 Revision 1, September 2009. Panduan firewall jaringan/host, kebijakan firewall, packet filtering, proxy, dan perimeter security.</p></div></li>
+          <li id="ref-fw-2"><strong>[14] Cisco</strong><div><a href="https://www.cisco.com/site/us/en/learn/topics/security/what-is-a-firewall.html">Cisco, “What Is a Firewall?”</a><p>Halaman edukasi vendor tentang packet filtering, proxy, stateful inspection, UTM, dan NGFW.</p><p class="verify-note">Tahun publikasi tidak ditampilkan pada halaman yang diverifikasi; perlu diperiksa manual bila sitasi harus mencantumkan tahun terbit.</p></div></li>
+          <li id="ref-fw-3"><strong>[15] IETF</strong><div><a href="https://www.rfc-editor.org/rfc/rfc2979.txt">Ned Freed, “Behavior of and Requirements for Internet Firewalls”</a><p>RFC 2979, Oktober 2000. Menjelaskan fungsi firewall, packet filter, endpoint protokol/proxy, serta contoh atribut kebijakan.</p></div></li>
+          <li id="ref-fw-4"><strong>[16] IETF</strong><div><a href="https://www.rfc-editor.org/rfc/rfc792">Jon Postel, “Internet Control Message Protocol”</a><p>RFC 792, September 1981. Rujukan format dan jenis pesan ICMPv4; Type 5 adalah Redirect.</p></div></li>
+          <li id="ref-fw-5"><strong>[17] IETF</strong><div><a href="https://www.rfc-editor.org/rfc/rfc1812.txt">Fred Baker, editor, “Requirements for IP Version 4 Routers”</a><p>RFC 1812, Juni 1995. Persyaratan router IPv4, termasuk konteks perilaku ICMP Redirect.</p></div></li>
+          <li id="ref-fw-6"><strong>[18] NVD</strong><div><a href="https://nvd.nist.gov/vuln/detail/CVE-2013-5211">NIST National Vulnerability Database, “CVE-2013-5211 Detail”</a><p>2014. Rujukan kelemahan NTP mode-7 yang berkaitan dengan potensi penyalahgunaan layanan NTP.</p><p class="verify-note">Halaman NVD memakai konten dinamis; detail deskripsi dan tanggal perlu diperiksa manual bila diperlukan untuk sitasi presisi.</p></div></li>
+          <li id="ref-fw-7"><strong>[19] Cloudflare</strong><div><a href="https://blog.cloudflare.com/memcrashed-major-amplification-attacks-from-port-11211/">Cloudflare, “Memcrashed - Major amplification attacks from UDP port 11211”</a><p>2018. Laporan teknis tentang penyalahgunaan instance Memcached/UDP yang terekspos dan mitigasi amplification.</p></div></li>
+          <li id="ref-fw-8"><strong>[20] IETF</strong><div><a href="https://www.rfc-editor.org/rfc/rfc2827">Paul Ferguson &amp; David Senie, “Network Ingress Filtering: Defeating Denial of Service Attacks which employ IP Source Address Spoofing”</a><p>RFC 2827 / BCP 38, Mei 2000. Best Current Practice tentang ingress filtering untuk membatasi pemalsuan alamat sumber IP.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="etika" aria-labelledby="ethics-title">
+      <article class="panel ethics">
+        <p class="section-tag">Penggunaan bertanggung jawab</p>
+        <h2 id="ethics-title">Catatan etika dan batasan</h2>
+        <p>Materi ini disediakan untuk edukasi dan pertahanan. Gunakan pengetahuan hanya pada sistem milik sendiri atau pada lingkungan yang secara eksplisit diizinkan untuk diuji.</p>
+        <p><strong>Jangan melakukan pemindaian, pengujian, pengalihan trafik, atau simulasi gangguan terhadap sistem tanpa izin tertulis dari pemiliknya.</strong> Ikuti kebijakan institusi, ruang lingkup lab, hukum, dan aturan responsible disclosure yang berlaku.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>Ethical Hacking Essentials · materi pembelajaran keamanan jaringan</span>
+      <a href="#atas">Kembali ke atas ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const nodes = {
+        icmp: {
+          title: "ICMP Redirect",
+          copy: "Topik ancaman pengalihan rute pada jaringan lokal. Firewall dapat memfilter ICMP Type 5 sesuai desain, namun kontrol host dan jaringan lain tetap penting.",
+          href: "icmp-redirect.html",
+          linkText: "Buka materi ICMP Redirect"
+        },
+        udp: {
+          title: "NTP Monlist & Memcached Amplification",
+          copy: "Topik DDoS melalui UDP reflection/amplification. Batasi layanan reflector pada sisi server; firewall korban tidak mengatasi saturasi link sebelum trafik tiba.",
+          href: "ntp-memcached-amplification.html",
+          linkText: "Buka materi Amplification"
+        },
+        network: {
+          title: "Jaringan dan titik kontrol",
+          copy: "Efektivitas kontrol bergantung pada jalur trafik dan tempat inspeksi. Kebijakan pada titik yang tepat menghubungkan pemahaman ancaman dengan pertahanan berlapis.",
+          href: "#urutan",
+          linkText: "Lihat saran urutan belajar"
+        },
+        firewall: {
+          title: "Generasi Teknologi Firewall",
+          copy: "Firewall dapat memfilter ICMP Type 5 dan membatasi akses UDP pada layanan yang dilindungi, tetapi hanya mengendalikan trafik yang melewati titik inspeksinya. Firewall di sisi korban tidak dapat mengatasi saturasi link sebelum trafik tiba.",
+          href: "firewall-generations.html",
+          linkText: "Buka materi Firewall"
+        }
+      };
+      const mapNodes = document.querySelectorAll(".map-svg .node");
+      function selectNode(node) {
+        const info = nodes[node.dataset.node];
+        if (!info) return;
+        mapNodes.forEach((item) => item.classList.toggle("selected", item === node));
+        $("#map-info-title").textContent = info.title;
+        $("#map-info-copy").firstChild.textContent = `${info.copy} `;
+        const link = $("#map-info-link");
+        link.href = info.href;
+        link.textContent = info.linkText;
+      }
+      const $ = (selector) => document.querySelector(selector);
+      mapNodes.forEach((node) => {
+        node.addEventListener("mouseenter", () => selectNode(node));
+        node.addEventListener("focus", () => selectNode(node));
+        node.addEventListener("click", () => selectNode(node));
+        node.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            selectNode(node);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
